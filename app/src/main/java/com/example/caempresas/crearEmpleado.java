@@ -2,6 +2,7 @@ package com.example.caempresas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -28,8 +29,6 @@ public class crearEmpleado extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_empleado);
 
-
-        //Busca los campos de datos
         identificacion = findViewById(R.id.ident);
         nombreEmpleado = findViewById(R.id.nombre);
         apellido = findViewById(R.id.apellidos);
@@ -61,5 +60,10 @@ public class crearEmpleado extends AppCompatActivity {
                 }
             }
         }).start();
+    }
+
+    public void volver(View view) {
+        Intent empleado =new Intent(this,empleados.class);
+        startActivity(empleado);
     }
 }
