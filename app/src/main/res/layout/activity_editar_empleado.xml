@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="12"
+    android:orientation="vertical"
+    tools:context=".editarEmpleado">
+
+    <EditText
+        android:id="@+id/ident"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tipo Identificacion"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/nombre"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/apellidos"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Apellidos"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/telefono"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Telefono"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/direccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Direccion"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Correo Electronico"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/idEmpresa"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="NumeroEmpresa"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/cargo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Cargo"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+    <EditText
+        android:id="@+id/salario"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Salario"
+        android:layout_margin="5dp"
+        android:layout_weight="1"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:weightSum="4 "
+        android:orientation="horizontal"
+        >
+
+        <Button
+            android:id="@+id/porcentaje"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="registrar"
+            android:text="ENVIAR"
+            android:layout_gravity="center"
+            app:cornerRadius="0dp"
+            />
+
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"/>
+
+        <Button
+            android:id="@+id/n0"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:onClick="volver"
+            android:text="ATRAS"
+            android:layout_gravity="center"
+            app:cornerRadius="0dp"
+            />
+    </LinearLayout>
+
+</LinearLayout>
