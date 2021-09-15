@@ -14,13 +14,17 @@ import java.sql.Statement;
 
 public class empleados extends AppCompatActivity {
 
+    EditText NameMail;
+    String NameEmail;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_empleados);
 
-
+        NameMail = findViewById(R.id.datos);
     }
+
     public void Crear(View view) {
         Intent empleado =new Intent(this,crearEmpleado.class);
         startActivity(empleado);
@@ -28,11 +32,31 @@ public class empleados extends AppCompatActivity {
 
     public void Editar(View view) {
         Intent empleado =new Intent(this,editarEmpleado.class);
+        empleado.putExtra("dato", NameMail.getText().toString());
         startActivity(empleado);
     }
 
     public void borrar(View view) {
-        Intent empleado =new Intent(this,eliminarEmpleado.class);
-        startActivity(empleado);
+
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    Class.forName("com.mysql.jdbc.Driver");
+                    Connection con = DriverManager.getConnection("jdbc:mysql://192.168.0.18:3306/infoempresa", "alejandro", "ZZ11yy33Aa00");
+                    Statement stmt = con.createStatement();
+                    stmt.executeUpdate("DELETE FROM empleado WHERE nombre = '"+NameMail.getText().toString()+"'");
+
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
+                } catch (SQLException throwables) {
+                    throwables.printStackTrace();
+                }
+
+            }
+
+
+        }).start();
     }
 }
