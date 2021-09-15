@@ -17,7 +17,7 @@ public class Listado extends AppCompatActivity {
 
     TextView lista;
     String Nit,TipoEmpresa,nombre,telefonoEmpresa,direccionEmpresa,correo;
-    String resultadoNit,resultadoTipo,resultadoNombre,resultadoTelefon,resultadoDir,resultadoCorreo;
+    String resultado ="";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,12 +43,12 @@ public class Listado extends AppCompatActivity {
                         direccionEmpresa = result.getString("direccion");
                         correo = result.getString("email");
 
-                        resultadoDir += String.valueOf(Nit) +" "+ "Nombre: " + nombre + "Tipo: " +TipoEmpresa +" Telefono: " + telefonoEmpresa +
+                        resultado += String.valueOf(Nit) +" "+ "Nombre: " + nombre + "Tipo: " +TipoEmpresa +" Telefono: " + telefonoEmpresa +
                                 "Direccion :"+direccionEmpresa+"\n" + "\n";
                         runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                lista.setText(resultadoDir);
+                                lista.setText(resultado);
                             }
                         });
 
