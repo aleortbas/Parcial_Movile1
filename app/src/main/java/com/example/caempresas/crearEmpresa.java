@@ -2,6 +2,7 @@ package com.example.caempresas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -53,6 +54,8 @@ public class crearEmpresa extends AppCompatActivity {
         }).start();
     }
 
-    public void volver(View view) {
+    public void atras(View view) {
+        Intent index =new Intent(this,MainActivity.class);
+        startActivity(index);
     }
 }

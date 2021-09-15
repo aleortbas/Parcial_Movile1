@@ -15,7 +15,6 @@ import java.sql.Statement;
 public class empleados extends AppCompatActivity {
 
     EditText NameMail;
-    String NameEmail;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,7 +44,7 @@ public class empleados extends AppCompatActivity {
                     Class.forName("com.mysql.jdbc.Driver");
                     Connection con = DriverManager.getConnection("jdbc:mysql://192.168.0.18:3306/infoempresa", "alejandro", "ZZ11yy33Aa00");
                     Statement stmt = con.createStatement();
-                    stmt.executeUpdate("DELETE FROM empleado WHERE nombre = '"+NameMail.getText().toString()+"'");
+                    stmt.executeUpdate("DELETE FROM empresa WHERE `nit` = '"+NameMail.getText().toString()+"'");
 
 
                 } catch (ClassNotFoundException e) {
@@ -59,4 +58,10 @@ public class empleados extends AppCompatActivity {
 
         }).start();
     }
+
+    public void atras(View view) {
+        Intent index =new Intent(this,MainActivity.class);
+        startActivity(index);
+    }
+
 }
