@@ -27,6 +27,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void irLista(View view) {
+        Intent lista =new Intent(this,Listado.class);
+        startActivity(lista);
     }
 
 }
